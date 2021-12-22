@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact list</title>
+    <script src="https://kit.fontawesome.com/fdfd6c296d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="box" id="heading">
+        <h1>Just a random wish <%= date %> </h1>
+    </div>
+
+    <div class="box">
+                <div class="item">
+                    <p><%= myWish.description %></p>
+                    <p><%= myWish.date %></p>
+                    <img src="<%= myWish.image %>" name="<%= myWish.image %>"> 
+                    
+                    
+                </div> 
+    </div>
+    
+    <footer>
+        <span>Tõnu K. &#169; 2021</span>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact list</title>
+    <script src="https://kit.fontawesome.com/fdfd6c296d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="box" id="heading">
+        <h1><%= date %> </h1>
+    </div>
+
+    <div class="box">
+        <% for(let i = 0; i < myWishes.length; i++) { %>
+            <form action="/delete" method="POST">
+                <div class="item">
+                    <p><%= myWishes[i].description %></p>
+                    <p><%= myWishes[i].date %></p>
+                    <img src="<%= myWishes[i].image %>" name="<%= myWishes[i].image %>"> 
+                    <input type="hidden" name="imgName" value="<%= myWishes[i].image %>">
+                    <button type="submit" style="margin-inline-start: auto;" value="<%= myWishes[i].id %>"  name="checkbox" ><i class="fas fa-minus"></i></button>
+                    
+                </div>
+            </form>
+            
+        <% } %>    
+
+        
+
+        <form action="/admin" class="class" method="POST" enctype="multipart/form-data">
+            <input type="text" name="newWish" placeholder="Your wish">
+            <input type="date" name="newDate" placeholder="Date">
+            <br>
+            <input type="file" name="userFile">
+            <button type="submit"><i class="fas fa-plus"></i></button>
+        </form>
+    </div>
+    
+    <footer>
+        <span>Tõnu K. &#169; 2021</span>
+    </footer>
+</body>
+</html>
